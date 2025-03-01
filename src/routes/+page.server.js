@@ -1,5 +1,4 @@
 export const load = async (event) => { 
-    console.log(event.locals)
     return {
         user: event.locals.user, //netlifyn e helyére a link kell 
         cica: 23434134123123
@@ -8,8 +7,13 @@ export const load = async (event) => {
 }
 
 export const actions = {
-    default: async (event) => {
+    cica: async (event) => {
         var data = await event.request.formData();
         console.log(data.get('cica'))
+    },
+
+    kutya: async (event) => {
+        var data = await event.request.formData();
+        console.log(Number(data.get('kutya')) + 1)
     }
 }
